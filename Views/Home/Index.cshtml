@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Welcome to Most-Definitly-Not-Amazon!";
+}
+
+@model IQueryable<Book>
+
+<div class="container">
+    <h4>Browse our wide selection of books!</h4>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>ISBN</th>
+                    <th>Classification/Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                    <tr>
+                        <td>@book.Title</td>
+                        <td>@book.AuthorFirstName @book.AuthorMiddleName @book.AuthorLastName</td>
+                        <td>@book.Publisher</td>
+                        <td>@book.ISBN</td>
+                        <td>@book.ClassificatonCategory</td>
+                        <td>$@book.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
