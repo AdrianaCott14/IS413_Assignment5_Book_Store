@@ -32,7 +32,8 @@ namespace BookStore.Models
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
                         ClassificatonCategory = "Fiction, Classic",
-                        Price = 9.95
+                        Price = 9.95,
+                        Pages = 1488
                     },
 
                     new Book
@@ -44,7 +45,8 @@ namespace BookStore.Models
                         Publisher = "Simon & Schuster",
                         ISBN = "978-0743270755",
                         ClassificatonCategory = "Non-Fiction, Biography",
-                        Price = 14.58
+                        Price = 14.58,
+                        Pages = 944
                     },
 
                      new Book
@@ -56,7 +58,8 @@ namespace BookStore.Models
                          Publisher = "Bantam",
                          ISBN = "978-0553384611",
                          ClassificatonCategory = "Non-Fiction, Biography",
-                         Price = 21.54
+                         Price = 21.54,
+                         Pages = 832
                      },
 
                      new Book
@@ -68,7 +71,8 @@ namespace BookStore.Models
                          Publisher = "Random House",
                          ISBN = "978-0812981254",
                          ClassificatonCategory = "Non-Fiction, Biography",
-                         Price = 11.61
+                         Price = 11.61,
+                         Pages = 864
                      },
 
                      new Book
@@ -80,7 +84,8 @@ namespace BookStore.Models
                         Publisher = "Random House",
                         ISBN = "978-0812974492",
                         ClassificatonCategory = "Non-Fiction, Historical",
-                        Price = 13.33
+                        Price = 13.33,
+                        Pages = 528
                      },
 
                      new Book
@@ -92,7 +97,8 @@ namespace BookStore.Models
                          Publisher = "Vintage",
                          ISBN = "978-0804171281",
                          ClassificatonCategory = "Fiction, Historical Fiction",
-                         Price = 15.95
+                         Price = 15.95,
+                         Pages = 288
                      },
 
                      new Book
@@ -104,7 +110,8 @@ namespace BookStore.Models
                          Publisher = "Grand Central Publishing",
                          ISBN = "978-1455586691",
                          ClassificatonCategory = "Non-Fiction, Self-Help",
-                         Price = 14.99
+                         Price = 14.99,
+                         Pages = 304
                      },
 
                      new Book
@@ -116,7 +123,8 @@ namespace BookStore.Models
                          Publisher = "Grand Central Publishing",
                          ISBN = "978-1455523023",
                          ClassificatonCategory = "Non-Fiction, Self-Help",
-                         Price = 21.66
+                         Price = 21.66,
+                         Pages = 240
                      },
 
                      new Book
@@ -128,7 +136,8 @@ namespace BookStore.Models
                          Publisher = "Portfolio",
                          ISBN = "978-1591847984",
                          ClassificatonCategory = "Non-Fiction, Business",
-                         Price = 29.16
+                         Price = 29.16,
+                         Pages = 400
                      },
 
                      new Book
@@ -140,7 +149,8 @@ namespace BookStore.Models
                          Publisher = "Bantam",
                          ISBN = "978-0553393613",
                          ClassificatonCategory = "Fiction, Thrillers",
-                         Price = 15.03
+                         Price = 15.03,
+                         Pages = 642
                      });
 
                 context.SaveChanges();
