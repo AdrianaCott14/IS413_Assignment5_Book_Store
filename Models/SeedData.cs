@@ -151,7 +151,47 @@ namespace BookStore.Models
                          ClassificatonCategory = "Fiction, Thrillers",
                          Price = 15.03,
                          Pages = 642
-                     });
+                     },
+
+                     new Book
+                     {
+                         Title = "Ranger's Apprentice: The Ruins of Gorlon",
+                         AuthorFirstName = "John",
+                         AuthorMiddleName = "",
+                         AuthorLastName = "Flanagan",
+                         Publisher = "BMI Educational",
+                         ISBN = "9780142417447",
+                         ClassificatonCategory = "Fiction, Fantasy",
+                         Price = 8.29,
+                         Pages = 282
+                     },
+
+                     new Book
+                     {
+                         Title = "Education",
+                         AuthorFirstName = "Tara",
+                         AuthorMiddleName = "",
+                         AuthorLastName = "Westover",
+                         Publisher = "Penguin Random House",
+                         ISBN = "9780399590504",
+                         ClassificatonCategory = "Biography, Memoir",
+                         Price = 28,
+                         Pages = 352
+                     },
+
+                     new Book
+                     {
+                         Title = "Who Moved My Cheese?",
+                         AuthorFirstName = "Spencer",
+                         AuthorMiddleName = "",
+                         AuthorLastName = "Johnson",
+                         Publisher = "G. P. Putnam's Sons",
+                         ISBN = "9780091816971",
+                         Price = 9.24,
+                         Pages = 92
+                     }
+                     
+                     );
 
                 context.SaveChanges();
             }
