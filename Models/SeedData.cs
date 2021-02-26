@@ -174,7 +174,7 @@ namespace BookStore.Models
                          AuthorLastName = "Westover",
                          Publisher = "Penguin Random House",
                          ISBN = "9780399590504",
-                         ClassificatonCategory = "Biography, Memoir",
+                         ClassificatonCategory = "Biography, Memoire",
                          Price = 28,
                          Pages = 352
                      },
@@ -187,6 +187,7 @@ namespace BookStore.Models
                          AuthorLastName = "Johnson",
                          Publisher = "G. P. Putnam's Sons",
                          ISBN = "9780091816971",
+                         ClassificatonCategory = "Non-Fiction, Self-Help",
                          Price = 9.24,
                          Pages = 92
                      }

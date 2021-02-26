@@ -6,17 +6,22 @@
 
 <div class="container">
     <h4>Browse our wide selection of books!</h4>
-    <div class="container col-md-4">
+    <div class="container col-md-6">
         @foreach (var book in Model.Books)
         {
-            <div class="card card-outline-primary p-4 bg-light" style="margin: 5px;">
-                <h4>@book.Title</h4>
-                <h5>@book.AuthorFirstName @book.AuthorMiddleName @book.AuthorLastName</h5>
-                <h6>@book.Publisher</h6>
-                <p>@book.ISBN</p>
-                <p>@book.ClassificatonCategory</p>
-                <p>$@book.Price</p>
-                <p>@book.Pages</p>
+            <div class="card card-outline-primary p-4 bg-light mb-5" style="margin: 5px;">
+                <h4>
+                    <span class="card-title float-left">@book.Title</span>
+                    <span class="badge badge-light float-right text-secondary">
+                    @book.AuthorFirstName @book.AuthorMiddleName @book.AuthorLastName</span>
+                </h4>
+                <div class="text-info">
+                    <p><strong>@book.Publisher</strong></p>
+                    <p>@book.ISBN</p>
+                    <p>@book.ClassificatonCategory</p>
+                    <p>$@book.Price</p>
+                    <p>@book.Pages</p>
+                </div>
             </div>
         }
     </div>
