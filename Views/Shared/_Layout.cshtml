@@ -16,8 +16,16 @@
         </div>
     </nav>
     <div style="margin-top:100px;" class="container">
-        <h1>@ViewBag.Title</h1>
-        @RenderBody()
+        <div class="row m-1 p-1">
+            <div class="col-3">
+                <h1>@ViewBag.Title</h1>
+                <vc:navigation-menu />
+            </div>
+            <div class="col-9">
+                @RenderBody()
+            </div>
+        </div>
+          
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -21,9 +21,34 @@ namespace BookStore.Controllers
             _repository = repository;
         }
 
+<<<<<<< Updated upstream
         public IActionResult Index()
         {
             return View(_repository.Books);
+=======
+        //passing in a variable to know which page to go to, default of 1
+        public IActionResult Index(string category, int page = 1)
+        {
+            return View(new BookListViewModel
+            {
+                Books = _repository.Books
+                    //this gets us the info passed from the repository
+                    .Where(x => category == null || x.Category == category)
+                    .OrderBy(p => p.BookId)
+                    .Skip((page - 1) * PageSize)
+                    .Take(PageSize)
+                ,
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                        _repository.Books.Where(x => x.Category == category).Count()
+                },
+                CurrentCategory = category
+            });
+
+>>>>>>> Stashed changes
         }
 
         public IActionResult Privacy()
