@@ -27,11 +27,14 @@ namespace BookStore.Infrastructure
         public PagingInfo PageModel { get; set; }
         public string PageAction { get; set; }
 
+<<<<<<< HEAD
         [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
         public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
 
 
         //for styling the page numbers
+=======
+>>>>>>> main
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -48,9 +51,13 @@ namespace BookStore.Infrastructure
             {
                 //build the dynamic url
                 TagBuilder tag = new TagBuilder("a");
+<<<<<<< HEAD
                 PageUrlValues["page"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction, 
                     PageUrlValues);
+=======
+                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+>>>>>>> main
 
                 if (PageClassesEnabled)
                 {

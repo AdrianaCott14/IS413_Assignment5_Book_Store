@@ -72,8 +72,11 @@ namespace BookStore
                     new { controller = "Home", action = "Index", page = 1 });
 
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                   "pagination",
+                   "Book/{page}",
+                   new { Controller = "Home", action = "Index" });
+
+                endpoints.MapDefaultControllerRoute();
             });
 
             SeedData.EnsurePopulated(app);
