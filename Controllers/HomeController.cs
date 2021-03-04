@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using BookStore.Models.ViewModels;
 
 namespace BookStore.Controllers
 {
@@ -16,22 +15,25 @@ namespace BookStore.Controllers
 
         private IBookStoreRepository _repository;
 
-        //set up how many items should be on the page
-        public int PageSize = 5;
-
         public HomeController(ILogger<HomeController> logger, IBookStoreRepository repository)
         {
             _logger = logger;
             _repository = repository;
         }
 
+<<<<<<< Updated upstream
+        public IActionResult Index()
+        {
+            return View(_repository.Books);
+=======
         //passing in a variable to know which page to go to, default of 1
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             return View(new BookListViewModel
             {
                 Books = _repository.Books
-                    //this gets us to the page that was oassed in
+                    //this gets us the info passed from the repository
+                    .Where(x => category == null || x.Category == category)
                     .OrderBy(p => p.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize)
@@ -40,10 +42,13 @@ namespace BookStore.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                        _repository.Books.Where(x => x.Category == category).Count()
+                },
+                CurrentCategory = category
             });
 
+>>>>>>> Stashed changes
         }
 
         public IActionResult Privacy()
