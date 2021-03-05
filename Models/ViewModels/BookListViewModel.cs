@@ -9,9 +9,6 @@ namespace BookStore.Models.ViewModels
     {
         public IEnumerable<Book> Books { get; set; }
         public PagingInfo PagingInfo { get; set; }
-<<<<<<< HEAD
         public string CurrentCategory { get; set; }
-=======
->>>>>>> main
     }
 }

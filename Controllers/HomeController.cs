@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStore.Models.ViewModels;
 
 namespace BookStore.Controllers
 {
@@ -15,17 +16,14 @@ namespace BookStore.Controllers
 
         private IBookStoreRepository _repository;
 
+        public int PageSize = 5;
+
         public HomeController(ILogger<HomeController> logger, IBookStoreRepository repository)
         {
             _logger = logger;
             _repository = repository;
         }
 
-<<<<<<< Updated upstream
-        public IActionResult Index()
-        {
-            return View(_repository.Books);
-=======
         //passing in a variable to know which page to go to, default of 1
         public IActionResult Index(string category, int page = 1)
         {
@@ -48,7 +46,6 @@ namespace BookStore.Controllers
                 CurrentCategory = category
             });
 
->>>>>>> Stashed changes
         }
 
         public IActionResult Privacy()
