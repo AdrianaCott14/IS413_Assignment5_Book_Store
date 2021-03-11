@@ -14,9 +14,10 @@ namespace BookStore.Pages
         private IBookStoreRepository repository;
 
         //constructor
-        public CartModel (IBookStoreRepository repo)
+        public CartModel (IBookStoreRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
 
         //properties
@@ -26,19 +27,30 @@ namespace BookStore.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
         //methods
+        //handler for the button to add a book to cart
         public IActionResult OnPost(long bookId, string returnUrl)
         {
-            Book book = repository.Books.FirstOrDefault(b => b.BookId == bookId);
+            Book book = repository.Books
+                .FirstOrDefault(b => b.BookId == bookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
             Cart.AddItem(book, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+            //HttpContext.Session.SetJson("cart", Cart);
+
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
+
+        //handler for the remove button
+        public IActionResult OnPostRemove(long bookId, string returnUrl)
+        {
+            Cart.RemoveItem(Cart.Lines.First(cl =>
+                cl.Book.BookId == bookId).Book);
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }

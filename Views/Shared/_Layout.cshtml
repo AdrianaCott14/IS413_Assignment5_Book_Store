@@ -6,12 +6,17 @@
     <title>BookStore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-inverse" style="background-color: #232f3e;">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a style="color:white !important;" class="navbar-brand" asp-action="Index">Most-Deifinitly-Not-Amazon</a>
+                <a style="color:white !important;" class="navbar-brand" asp-action="Index">
+                Most-Deifinitly-Not-Amazon</a>
+            </div>
+            <div class="col-6 text-right">
+                <vc:cart-summary />
             </div>
         </div>
     </nav>

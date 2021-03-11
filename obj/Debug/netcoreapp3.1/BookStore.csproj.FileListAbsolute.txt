@@ -81,3 +81,5 @@ C:\Users\adria\source\repos\BookStore\obj\Debug\netcoreapp3.1\BookStore.genrunti
 C:\Users\adria\source\repos\BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\adria\source\repos\BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\adria\source\repos\BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\AddToCart.cshtml.g.cs
+C:\Users\adria\source\repos\BookStore\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\adria\source\repos\BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CartSummary\Default.cshtml.g.cs

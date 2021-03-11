@@ -9,9 +9,10 @@ namespace BookStore.Models
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
-        public void AddItem(Book bk, int qty)
+        public virtual void AddItem(Book bk, int qty)
         {
-            CartLine line = Lines.Where(b => b.Book.BookId == bk.BookId)
+            CartLine line = Lines
+                .Where(b => b.Book.BookId == bk.BookId)
                 .FirstOrDefault();
 
             if (line == null)
@@ -29,10 +30,10 @@ namespace BookStore.Models
             }
         }
 
-        public void RemoveItem(Book bk) =>
+        public virtual void RemoveItem(Book bk) =>
             Lines.RemoveAll(x => x.Book.BookId == bk.BookId);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public double ComputeTotalSum() => Lines.Sum(e => e.Book.Price * e.Quantity);
 
