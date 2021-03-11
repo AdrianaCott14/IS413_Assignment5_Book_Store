@@ -27,7 +27,8 @@ namespace BookStore.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-            //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            //delete
+            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
         //methods
@@ -36,12 +37,12 @@ namespace BookStore.Pages
         {
             Book book = repository.Books
                 .FirstOrDefault(b => b.BookId == bookId);
-
-            //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            //delete
+           // Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
             Cart.AddItem(book, 1);
-
-            //HttpContext.Session.SetJson("cart", Cart);
+            //delete
+            HttpContext.Session.SetJson("cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
@@ -51,6 +52,8 @@ namespace BookStore.Pages
         {
             Cart.RemoveItem(Cart.Lines.First(cl =>
                 cl.Book.BookId == bookId).Book);
+
+            HttpContext.Session.SetJson("cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
