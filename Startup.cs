@@ -69,20 +69,20 @@ namespace BookStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catpage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                    "{pageNum:int}",
                     new { controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("category",
                     "{category}",
-                    new { controller = "Home", action = "Index", page = 1 });
+                    new { controller = "Home", action = "Index", pageNum = 1 });
 
                 endpoints.MapControllerRoute(
                    "pagination",
-                   "Book/{page}",
+                   "Book/{pageNum}",
                    new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();

@@ -3,4 +3,36 @@
 @{
 }
 
-<p>Test</p>
+<h2>Your Cart</h2>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.Cart.Lines)
+            {
+                <tr>
+                    <td class="text-left">@line.Book.Title</td>
+                    <td class="text-center">@line.Quantity</td>
+                    <td class="text-right">@((line.Book.Price).ToString("c"))</td>
+                    <td class="text-right">@((line.Quantity * line.Book.Price).ToString("c"))</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td lass="text-right" colspan="3">Total:</td>
+                <td class="text-right">@Model.Cart.ComputeTotalSum().ToString("c")</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="col-3 text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>

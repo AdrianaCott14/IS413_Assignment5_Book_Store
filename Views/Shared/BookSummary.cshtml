@@ -21,7 +21,7 @@
         <p>@Model.Pages</p>
     </div>
 
-    <form id="@Model.BookId" asp-page="/Cart" method="post">
+    <form id="@Model.BookId" asp-page="/AddToCart" method="post">
         <input type="hidden" asp-for="BookId" />
         <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
         <span class="cart-text p-1">
