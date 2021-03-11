@@ -28,7 +28,7 @@ namespace BookStore.Pages
         {
             ReturnUrl = returnUrl ?? "/";
             //delete
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
         //methods
@@ -42,7 +42,7 @@ namespace BookStore.Pages
 
             Cart.AddItem(book, 1);
             //delete
-            HttpContext.Session.SetJson("cart", Cart);
+            //HttpContext.Session.SetJson("cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
@@ -53,7 +53,7 @@ namespace BookStore.Pages
             Cart.RemoveItem(Cart.Lines.First(cl =>
                 cl.Book.BookId == bookId).Book);
 
-            HttpContext.Session.SetJson("cart", Cart);
+            //HttpContext.Session.SetJson("cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
